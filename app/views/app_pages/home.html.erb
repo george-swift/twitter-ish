@@ -1,13 +1,13 @@
 <div class='home row'>
-  <div class='col-md-6 order-1 order-sm-0 logo'>
+  <div class='col-md-6 order-1 order-md-0 logo'>
     <%= image_tag("twitter.svg", alt: "Twitter-ish logo", width: '320') %>
   </div>
-  <div class='interface order-0 order-sm-1 col-md-6'>
+  <div class='interface order-0 order-md-1 col-md-6'>
     <%= image_tag("twitter.svg", alt: "Twitter-ish logo", width: '50') %>
     <h1>Happening now</h1>
     <h3>Join Twitter-ish today</h3>
     <ul class='options'>
-      <li class="rounded-pill"><%= link_to 'Sign up', '#' %></li>
+      <li class="rounded-pill"><%= link_to 'Sign up', signup_path %></li>
       <li class="rounded-pill"><%= link_to 'Log in', '#' %></li>
     </ul>
   </div>
@@ -15,7 +15,7 @@
 <div class="footer"> 
   <ul>
     <li><%= link_to "About", about_path %></li>
-    <li><a href="https://github.com/george-swift">Github</a></li>
+    <li><a href="https://github.com/george-swift" target='_blank'>Github</a></li>
   </ul>
   <span>© 2021 Twitter-ish, Inc.</span>
 </div>
