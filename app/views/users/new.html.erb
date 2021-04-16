@@ -1,10 +1,27 @@
 <div class='container'>
   <div class='signup row justify-content-center'>
-    <div class="col-md-8 col-md-offset-2 ">
+    <div class="col-md-6 col-md-offset-3 ">
       <div>
         <%= link_to image_tag("twitter-blue.svg", alt: "Twitter-ish logo"), root_path %>
         <h2>Create your account</h2>
       </div>
+      <%= form_with(model: @user, local: true) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <%= f.label :fullname, 'Full Name', class: 'form-label' %>
+        <%= f.text_field :fullname, class: 'form-control' %>
+
+        <%= f.label :username, class: 'form-label' %>
+        <%= f.text_field :username, class: 'form-control' %>
+
+        <%= f.label :photo, class: 'form-label' %>
+        <%= f.file_field :photo, accept: "image/jpeg,image/gif,image/png", class: 'form-control' %>
+
+        <%= f.label :coverimage, 'Cover Image', class: 'form-label' %>
+        <%= f.file_field :coverimage, accept: "image/jpeg,image/gif,image/png", class: 'form-control' %>
+
+        <%= f.submit "Submit", class: "btn" %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -3,9 +3,16 @@
 $twitter-blue: rgb(29, 161, 242);
 $twitter-gray: rgb(217, 217, 217);
 $twitter-gray-dark: rgb(110, 118, 125);
+$twitter-night: rgb(36, 52, 71);
 $black: rgb(0, 0, 0);
+
 $helvetica: 'Helvetica', 'Arial', sans-serif;
 $segoe: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@mixin transform {
+  transform: scale(1.15) translateY(-4px);
+  transition: 0.4s ease-in;
+}
 
 @mixin center {
   display: flex;
@@ -22,10 +29,21 @@ body {
   box-sizing: border-box;
 }
 
+.debug_dump {
+  width: 100%;
+  padding: 0 40px;
+  margin-top: 10px;
+}
+
 h2 {
   font: 700 23px/28px $segoe;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
 }
 
 // Styling rules for Twitter-ish home page
@@ -73,8 +91,7 @@ h2 {
       @include center;
 
       &:hover {
-        transform: scale(1.15) translateY(-4px);
-        transition: 0.4s ease-in;
+        @include transform;
       }
 
       &:last-child {
@@ -106,9 +123,6 @@ h2 {
   font: 400 13px/16px $segoe;
 
   ul {
-    list-style: none;
-    margin: 0;
-
     @include flex;
 
     li {
@@ -144,4 +158,84 @@ h2 {
 
 .signup {
   padding: 2em 0.8em;
+
+  input,
+  textarea,
+  select {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  input {
+    height: auto !important;
+  }
+
+  .btn {
+    border: none;
+    background: $twitter-blue;
+    color: #fff;
+    font-weight: 600;
+
+    &:hover {
+      background: $twitter-night;
+    }
+  }
+}
+
+#error_explanation {
+  color: red;
+
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .is-invalid;
+
+  .form-control {
+    color: $danger;
+  }
+}
+
+// Styling rules for user show page
+
+.left-menu {
+  background: $twitter-night;
+  color: $twitter-gray;
+}
+
+.timeline {
+  padding: 0;
+
+  .navbar {
+    background: $twitter-blue;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    &:hover {
+      @include transform;
+    }
+  }
+
+  ul {
+    li {
+      margin-right: 2em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      img {
+        width: 20px;
+
+        &:hover {
+          @include transform;
+        }
+      }
+    }
+  }
 }
