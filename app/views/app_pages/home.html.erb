@@ -1,2 +1,21 @@
-<h1>AppPages#home</h1>
-<p>Find me in app/views/app_pages/home.html.erb</p>
+<div class='home row'>
+  <div class='col-md-6 order-1 order-sm-0 logo'>
+    <%= image_tag("twitter.svg", alt: "Twitter-ish logo", width: '320') %>
+  </div>
+  <div class='interface order-0 order-sm-1 col-md-6'>
+    <%= image_tag("twitter.svg", alt: "Twitter-ish logo", width: '50') %>
+    <h1>Happening now</h1>
+    <h3>Join Twitter-ish today</h3>
+    <ul class='options'>
+      <li class="rounded-pill"><%= link_to 'Sign up', '#' %></li>
+      <li class="rounded-pill"><%= link_to 'Log in', '#' %></li>
+    </ul>
+  </div>
+</div>
+<div class="footer"> 
+  <ul>
+    <li><%= link_to "About", about_path %></li>
+    <li><a href="https://github.com/george-swift">Github</a></li>
+  </ul>
+  <span>© 2021 Twitter-ish, Inc.</span>
+</div>

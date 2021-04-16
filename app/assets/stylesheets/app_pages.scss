@@ -1,3 +1,138 @@
 // Place all the styles related to the AppPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'bootstrap';
+
+$twitter-blue: rgb(29, 161, 242);
+$twitter-gray: rgb(217, 217, 217);
+$twitter-gray-dark: rgb(110, 118, 125);
+$black: rgb(0, 0, 0);
+$helvetica: 'Helvetica', 'Arial', sans-serif;
+$segoe: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+// Styling rules for Twitter-ish home page
+
+.home {
+  height: 92vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.logo {
+  @include center;
+
+  background-color: $twitter-blue;
+}
+
+.interface {
+  @include center;
+
+  flex-direction: column;
+  background-color: $black;
+  color: $twitter-gray;
+
+  h1 {
+    margin-top: 16px;
+    font: 700 64px/84px $helvetica;
+    letter-spacing: -1.2px;
+  }
+
+  h3 {
+    font: 700 31px/36px $helvetica;
+  }
+
+  .options {
+    margin-top: 1em;
+    list-style: none;
+    padding: 5px;
+
+    li {
+      background-color: $twitter-blue;
+      height: 45px;
+      width: 250px;
+      margin-bottom: 1em;
+
+      @include center;
+
+      &:hover {
+        transform: translateY(-5px);
+        transition: 0.4s ease-in;
+      }
+
+      &:last-child {
+        background-color: $black;
+        border: 2px solid $twitter-blue;
+
+        a {
+          color: $twitter-blue;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font: 700 15px/20px $segoe;
+    }
+  }
+}
+
+.footer {
+  @include flex;
+
+  justify-content: space-between;
+  padding-right: 25px;
+  background-color: $black;
+  color: $twitter-gray-dark;
+  height: 8vh;
+  font: 400 13px/16px $segoe;
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    @include flex;
+
+    li {
+      margin-right: 1em;
+    }
+
+    a {
+      color: $twitter-gray-dark;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .interface {
+    h1 {
+      font-size: 40px;
+      line-height: 52.5px;
+    }
+
+    h3 {
+      font-size: 23px;
+      line-height: 28px;
+    }
+  }
+}
