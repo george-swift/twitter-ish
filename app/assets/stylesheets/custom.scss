@@ -27,6 +27,15 @@ $segoe: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 
 body {
   box-sizing: border-box;
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .debug_dump {
@@ -50,8 +59,6 @@ ul {
 
 .home {
   height: 92vh;
-  width: 100vw;
-  margin: 0;
 }
 
 .logo {
@@ -157,7 +164,7 @@ ul {
 // Styling rules for sign up page
 
 .signup {
-  padding: 2em 0.8em;
+  padding-top: 2em;
 
   input,
   textarea,

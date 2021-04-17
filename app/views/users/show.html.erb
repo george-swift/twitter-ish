@@ -1,0 +1,30 @@
+<div class='row'>
+  <section class='left-menu col-2'>
+    <div class="user_info">
+      <h1>
+        <%= @user.username %>
+      </h1>
+    </div>
+    <div class="stats">
+      <a href="#"> <strong id="following" class="stat"> </strong>following</a>
+      <a href="#"> <strong id="followers" class="stat"> </strong>followers </a>
+    </div>
+  </section>
+  <section class='timeline col-10'>
+    <nav class="navbar">
+      <div class="container">
+        <%= link_to image_tag("twitter.svg", alt: "Twitter-ish logo", width: '30'), root_path, class: 'navbar-brand' %>
+        <ul class='navbar navbar-right'>
+          <li><%= link_to image_tag("pencil.png", alt: "twitter-ish pencil"), '#' %></li>
+          <li><%= link_to image_tag("mail.png", alt: "twitter-ish mail"), '#' %></li>
+          <li><%= link_to image_tag("search.svg", alt: "twitter-ish search"), '#' %></li>
+          <li><%= link_to image_tag("settings.svg", alt: "twitter-ish settings"), '#' %></li>
+        </ul>
+      </div>
+    </nav>
+    <div>
+      <section></section>
+      <section></section>
+    </div>
+  </section>
+</div>
