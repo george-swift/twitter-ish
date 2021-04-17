@@ -55,6 +55,10 @@ ul {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 // Styling rules for Twitter-ish home page
 
 .home {
@@ -112,7 +116,6 @@ ul {
     }
 
     a {
-      text-decoration: none;
       color: #fff;
       font: 700 15px/20px $segoe;
     }
@@ -138,7 +141,6 @@ ul {
 
     a {
       color: $twitter-gray-dark;
-      text-decoration: none;
 
       &:hover {
         color: #fff;
@@ -161,7 +163,7 @@ ul {
   }
 }
 
-// Styling rules for sign up page
+// Styling rules for sign up and log in page
 
 .signup {
   padding-top: 2em;
@@ -186,6 +188,12 @@ ul {
 
     &:hover {
       background: $twitter-night;
+    }
+  }
+
+  p {
+    a {
+      color: $twitter-blue;
     }
   }
 }
