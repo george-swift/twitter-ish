@@ -23,6 +23,8 @@ gem 'rexml', '~> 3.2', '>= 3.2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'active_storage_validations', '~> 0.9.2'
 gem 'bootstrap', '~> 5.0.0.beta2'
+gem 'jquery-rails', '~> 4.4'
+gem 'popper_js', '~> 2.8.6'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
