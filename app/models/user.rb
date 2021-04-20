@@ -8,4 +8,9 @@ class User < ApplicationRecord
   validates :coverimage, content_type: { in: %w[image/jpeg image/gif image/png],
                                          message: 'must be a valid image format' },
                          size: { less_than: 4.megabytes, message: 'should be less than 4MB' }
+
+  # Resize uploaded images for display
+  def profile_photo
+    photo.variant(resize_to_limit: [100, 100])
+  end
 end
