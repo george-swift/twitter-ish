@@ -147,6 +147,10 @@ strong {
   height: 92vh;
 }
 
+.bird:hover {
+  transform: scaleX(-1);
+}
+
 .interface {
   flex-direction: column;
   background-color: $black;
@@ -311,7 +315,6 @@ strong {
 }
 
 .profile-dp {
-  max-width: 50px;
   height: 45px;
   border: 1px solid $twitter-gray-dark;
   border-radius: 4px;
@@ -503,6 +506,14 @@ strong {
   .profile-dp {
     border-radius: 50%;
   }
+
+  .profile-dp {
+    width: 45px;
+  }
+
+  div {
+    width: 50%;
+  }
 }
 
 .name {
@@ -516,8 +527,11 @@ strong {
 }
 
 .add-btn {
+  margin-left: 10%;
+}
+
+.btn-icon {
   width: 35px;
-  margin-left: 40px;
 }
 
 // Grouped selectors to DRY up stylesheet
@@ -536,6 +550,6 @@ strong {
 .options li:hover,
 .top-icons:hover,
 .navbar-brand:hover,
-.add-btn:hover {
+.btn-icon:hover {
   @include transform;
 }

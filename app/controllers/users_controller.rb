@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[show edit update]
+  before_action :logged_in_user, only: %i[index show edit update]
   before_action :right_user, only: %i[edit update]
 
   def new
@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def index
+    @users = User.all
   end
 
   def show
