@@ -4,3 +4,7 @@ jarvis:
   fullname: Jarvis AI
   username: jarvis
 
+alexa:
+  fullname: Amazon Alexa
+  username: alexa
+

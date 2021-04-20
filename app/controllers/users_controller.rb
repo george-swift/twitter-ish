@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: %i[edit update]
+  before_action :right_user, only: %i[edit update]
+
   def new
     @user = User.new
   end
@@ -36,5 +39,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:fullname, :username, :photo, :coverimage)
+  end
+
+  def logged_in_user
+    flash[:danger] = 'Please log in to your Twitter-ish' unless logged_in?
+    redirect_to login_url unless logged_in?
+  end
+
+  def right_user
+    @user = User.find(params[:id])
+    redirect_to current_user unless current_user?(@user)
   end
 end

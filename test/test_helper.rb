@@ -15,4 +15,15 @@ class ActiveSupport::TestCase
   def user_logged_in?
     !session[:user_id].nil?
   end
+
+  def log_in_as(user)
+    session[:user_id] = user.id
+  end
+end
+
+# Add helper to be called in integration tests
+class ActionDispatch::IntegrationTest
+  def log_in_as(user)
+    post login_path params: { session: { username: user.username } }
+  end
 end
