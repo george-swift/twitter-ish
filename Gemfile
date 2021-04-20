@@ -27,7 +27,9 @@ gem 'jquery-rails', '~> 4.4'
 gem 'popper_js', '~> 2.8.6'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+
+gem 'mini_magick', '~> 4.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -56,8 +58,8 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'guard', '2.16.2'
   gem 'guard-minitest', '2.4.6'
-  gem 'minitest', '5.11.3'
-  gem 'minitest-reporters', '1.3.8'
+  gem 'minitest', '~> 5.14', '>= 5.14.4'
+  gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
   gem 'rails-controller-testing', '1.0.4'
   gem 'webdrivers', '4.6.0'
 end
