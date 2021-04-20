@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :opinions, foreign_key: 'author_id'
   has_one_attached :photo
   has_one_attached :coverimage
   validates :username, presence: true, length: { minimum: 2 }
