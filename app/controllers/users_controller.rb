@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[edit update]
+  before_action :logged_in_user, only: %i[show edit update]
   before_action :right_user, only: %i[edit update]
 
   def new
@@ -42,8 +42,11 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    flash[:danger] = 'Please log in to your Twitter-ish' unless logged_in?
-    redirect_to login_url unless logged_in?
+    return if logged_in?
+
+    store_location
+    flash[:danger] = 'Please log in to your Twitter-ish'
+    redirect_to login_url
   end
 
   def right_user
