@@ -23,13 +23,9 @@ module UsersHelper
     return if current_user?(user)
 
     if current_user.following?(user)
-      render 'unfollow'
+      render 'unfollow', unfollow: user
     else
-      render 'follow'
+      render 'follow', follow: user
     end
-  end
-
-  def user
-    @user ||= current_user
   end
 end
