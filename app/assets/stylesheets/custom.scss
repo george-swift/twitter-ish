@@ -562,12 +562,17 @@ strong {
   color: $twitter-gray-dark;
 }
 
-.add-btn {
-  margin-left: 10%;
+.follow-btn {
+  @include font;
+
+  font-size: 0.7em;
 }
 
-.btn-icon {
-  width: 35px;
+.unfollow-btn {
+  @extend .follow-btn;
+
+  background-color: $warning;
+  font-size: 0.6em;
 }
 
 // Grouped selectors to DRY up stylesheet
