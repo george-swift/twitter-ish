@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :opinions, only: %i[create destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

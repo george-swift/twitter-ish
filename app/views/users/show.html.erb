@@ -28,8 +28,12 @@
           </div>
           <div class="profile-stats row">
             <p class="stat"> <strong> <%= @user.opinions.count%> </strong><%= tweets(@user) %> </p>
-            <a href="#" class="stat"> <strong id="following"> 100 </strong>Following</a>
-            <a href="#" class="stat"> <strong id="followers"> 1000 </strong>Followers </a>
+            <a href="<%= following_user_path(@user) %>" class="stat"> 
+              <strong id="following"> <%= @user.following.count %> </strong> Following
+            </a>
+            <a href="<%= followers_user_path(@user) %>" class="stat">
+              <strong id="followers"> <%= @user.followers.count %> </strong>Followers
+            </a>
           </div>
         </div>
         <ul class='wrap-handles'>
