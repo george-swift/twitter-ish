@@ -14,4 +14,8 @@ module UsersHelper
       image_tag('ci-unsplash.jpg')
     end
   end
+
+  def tweets(user)
+    'Tweet'.pluralize(user.opinions.count)
+  end
 end

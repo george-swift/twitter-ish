@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @opinions = @user.opinions.all
   end
 
   def edit
