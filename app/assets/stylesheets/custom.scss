@@ -308,7 +308,7 @@ strong {
 }
 
 .avatar {
-  width: 40px;
+  width: 43px;
   margin-right: 12px;
   border: 2px solid $twitter-gray-dark;
   background: $twitter-night;
@@ -415,6 +415,31 @@ strong {
   }
 }
 
+.each-opinion {
+  @include flex;
+
+  color: $twitter-gray;
+
+  .profile-dp {
+    width: 43px;
+  }
+}
+
+.author {
+  @include flex;
+
+  justify-content: space-between;
+}
+
+.time {
+  font: 400 14px $helvetica;
+}
+
+.text {
+  color: $twitter-gray-dark;
+  font: 400 14px $segoe;
+}
+
 .index {
   @include font;
 
@@ -517,7 +542,7 @@ strong {
 }
 
 .name {
-  font: 700 13px $segoe;
+  font: 700 14px $segoe;
   color: $black;
 }
 

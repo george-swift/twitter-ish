@@ -1,9 +1,12 @@
 <div class='twitter-ish row'>
-  <%= render 'left_menu' %>
-  <section class='main col-10 p-0'>
-    <%= render 'top_nav' %>
-    <div class="twitter-ish row">
 
+  <%= render 'left_menu' %>
+
+  <section class='main col-10 p-0'>
+
+    <%= render 'top_nav' %>
+
+    <div class="twitter-ish row">
       <section class='timeline col-9 p-0'>
         <ul class='tab p-0'>
           <li class="tab-link m-0"><%= link_to 'Tweets', '#' %></li>
@@ -20,20 +23,11 @@
 
       <section class='suggested col-3 p-0'>
         <ul class='wrap-handles'>
-            <li class='followers'>Who to follow</li>
-            <% @users.each do |user| %>
-              <li class='handle'>
-                <%= avatar_for user %>
-                <div>
-                  <p class="name"><%= user.fullname %></p>
-                  <p class="username">&#64;<%= user.username %></p>
-                </div>
-                <%= link_to image_tag('add.png', class: 'btn-icon'), '#', class: 'add-btn' %>
-              </li>
-            <% end %>
+          <li class='followers'>Who to follow</li>
+          <%= render @users %>
         </ul>
       </section>
-
     </div>
+
   </section>
 </div>

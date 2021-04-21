@@ -16,6 +16,7 @@
         <div class='tweets'>
           <ul class="wrap-tweets">
             <li class="index">All Tweets</li>
+            <%= render @opinions %>
           </ul>
         </div>
       </section>
@@ -28,21 +29,14 @@
             <p>@<%= @user.username %></p>
           </div>
           <div class="profile-stats row">
-            <a href="#" class="stat"> <strong> 1200 </strong>Tweets</a>
+            <p class="stat"> <strong> <%= @user.opinions.count%> </strong><%= tweets(@user) %> </p>
             <a href="#" class="stat"> <strong id="following"> 100 </strong>Following</a>
             <a href="#" class="stat"> <strong id="followers"> 1000 </strong>Followers </a>
           </div>
         </div>
         <ul class='wrap-handles'>
             <li class='followers'>Followed by</li>
-            <li class='handle'>
-              <%= avatar_for(@user) %>
-              <div>
-                <p class="name"><%= @user.fullname %></p>
-                <p class="username">@<%= @user.username %></p>
-              </div>
-              <%= link_to image_tag('add.png', class: 'btn-icon'), '#' %>
-            </li>
+            <%= render 'user', user: @user %>
         </ul>
       </section>
 

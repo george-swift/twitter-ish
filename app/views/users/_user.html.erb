@@ -1,0 +1,8 @@
+<li class='handle'>
+  <%= link_to avatar_for(user), user %>
+  <div>
+    <p class="name"><%= user.fullname %></p>
+    <p class="username">&#64;<%= user.username %></p>
+  </div>
+  <%= link_to image_tag('add.png', class: 'btn-icon'), '#', class: 'add-btn' %>
+</li>
