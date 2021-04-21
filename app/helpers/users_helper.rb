@@ -18,4 +18,18 @@ module UsersHelper
   def tweets(user)
     'Tweet'.pluralize(user.opinions.count)
   end
+
+  def action(user)
+    return if current_user?(user)
+
+    if current_user.following?(user)
+      render 'unfollow'
+    else
+      render 'follow'
+    end
+  end
+
+  def user
+    @user ||= current_user
+  end
 end

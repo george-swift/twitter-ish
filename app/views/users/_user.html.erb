@@ -4,5 +4,5 @@
     <p class="name"><%= user.fullname %></p>
     <p class="username">&#64;<%= user.username %></p>
   </div>
-  <%= link_to image_tag('add.png', class: 'btn-icon'), '#', class: 'add-btn' %>
+  <span id='follow-form'><%= action(user) %></span>
 </li>
