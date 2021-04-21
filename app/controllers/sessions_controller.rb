@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user
       log_in user
-      redirect_or user
+      redirect_or users_url
     else
       flash.now[:danger] = 'Invalid username'
       render 'new'
