@@ -5,6 +5,9 @@
       <p class="name"><%= opinion.author.fullname %></p>
       <p class="time"><%= time_ago_in_words(opinion.created_at) %></p>
     </div>
-    <p class="text mt-1"><%= opinion.text %></p>
+    <div class='author'>
+      <p class="text mt-1"><%= opinion.text %></p>
+      <%= delete(opinion) %>
+    </div>
   </div>
 </li>
