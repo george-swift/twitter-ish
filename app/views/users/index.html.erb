@@ -1,24 +1,22 @@
 <div class='twitter-ish row'>
 
-  <%= render 'left_menu' %>
+  <%= render 'shared/left_menu' %>
 
   <section class='main col-10 p-0'>
 
-    <%= render 'top_nav' %>
+    <%= render 'shared/top_nav' %>
 
     <div class="twitter-ish row">
       <section class='timeline col-9 p-0'>
         <ul class='tab p-0'>
-          <li class="tab-link m-0"><%= link_to 'Tweets', '#' %></li>
+          <li class="tab-link m-0"><%= link_to 'Tweets', '#all-tweets' %></li>
           <li class="tab-link m-0"><%= link_to 'Following', '#' %></li>
           <li class="tab-link m-0"><%= link_to 'Followers', '#' %></li>
         </ul>
+
+        <%= render 'shared/opinion_form' %>
         
-        <div class='tweets'>
-          <ul class="wrap-tweets">
-            <li class="index">All Tweets</li>
-          </ul>
-        </div>
+        <%= render 'shared/timeline' %>
       </section>
 
       <section class='suggested col-3 p-0'>

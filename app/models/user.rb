@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def profile_photo
     photo.variant(resize_to_limit: [100, 100])
   end
+
+  def timeline
+    Opinion.where('author_id = ?', id)
+  end
 end

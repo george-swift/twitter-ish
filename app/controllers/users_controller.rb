@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @opinion = current_user.opinions.build
+    @opinions = current_user.timeline
   end
 
   def show
@@ -44,14 +46,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:fullname, :username, :photo, :coverimage)
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = 'Please log in to your Twitter-ish'
-    redirect_to login_url
   end
 
   def right_user
