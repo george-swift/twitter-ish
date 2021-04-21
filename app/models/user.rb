@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_one_attached :coverimage
   has_many :active_relationships, class_name: 'Following', foreign_key: 'follower_id'
   has_many :following, through: :active_relationships, source: :followed
+  has_many :passive_relationships, class_name: 'Following', foreign_key: 'followed_id'
+  has_many :followers, through: :passive_relationships
 
   validates :username, presence: true, length: { minimum: 2 }
   validates :fullname, presence: true, length: { minimum: 3 }

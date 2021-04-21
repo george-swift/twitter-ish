@@ -35,6 +35,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not siri.following?(jarvis)
     siri.follow(jarvis)
     assert siri.following?(jarvis)
+    assert jarvis.followers.include?(siri)
     siri.unfollow(jarvis)
     assert_not siri.following?(jarvis)
   end
