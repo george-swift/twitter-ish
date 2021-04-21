@@ -1,5 +1,5 @@
 <%= form_with model: @user, local: true do |f| %>
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :fullname, 'Full Name', class: 'form-label' %>
   <%= f.text_field :fullname, class: 'form-control' %>

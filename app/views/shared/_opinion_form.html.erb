@@ -1,0 +1,7 @@
+<div class='field p-3'>
+  <%= form_with(model: @opinion, local: true, class: 'd-flex flex-column') do |f| %>
+    <%= f.label :text, 'Share your opinion' %>
+    <%= f.text_area :text, placeholder: "...what's on your mind?", class: 'my-2 p-2' %>
+    <%= f.submit "Post", class: "btn w-25" %>
+  <% end %>
+</div>
