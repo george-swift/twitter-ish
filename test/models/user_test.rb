@@ -28,4 +28,14 @@ class UserTest < ActiveSupport::TestCase
     @user.fullname = 'a' * 2
     assert_not @user.valid?
   end
+
+  test 'should follow and unfollow a user' do
+    siri = users(:siri)
+    jarvis = users(:jarvis)
+    assert_not siri.following?(jarvis)
+    siri.follow(jarvis)
+    assert siri.following?(jarvis)
+    siri.unfollow(jarvis)
+    assert_not siri.following?(jarvis)
+  end
 end
