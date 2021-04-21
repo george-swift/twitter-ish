@@ -97,6 +97,7 @@ body {
   }
 
   .alert {
+    border-radius: 0;
     padding: 0.5em;
     margin-bottom: 0;
     text-align: center;
@@ -245,7 +246,6 @@ strong {
   input,
   textarea,
   select {
-    border: 1px solid #bbb;
     width: 100%;
     margin-bottom: 15px;
   }
@@ -257,16 +257,17 @@ strong {
   small {
     font-style: italic;
   }
+}
 
-  .btn {
-    background-color: $twitter-blue;
-    border: none;
+.btn {
+  background-color: $twitter-blue;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+
+  &:hover {
+    background: $twitter-night;
     color: #fff;
-    font-weight: 600;
-
-    &:hover {
-      background: $twitter-night;
-    }
   }
 }
 
@@ -405,6 +406,16 @@ strong {
   margin: 25px 15px;
   border-radius: 3px;
   border: 1px solid $twitter-gray;
+}
+
+.field {
+  @extend .tweets;
+
+  label {
+    @include font;
+
+    color: $twitter-gray;
+  }
 }
 
 .wrap-tweets {
