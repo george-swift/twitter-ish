@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :opinions, foreign_key: 'author_id'
   has_one_attached :photo
   has_one_attached :coverimage
+  has_many :active_relationships, class_name: 'Following', foreign_key: 'follower_id'
+  has_many :following, through: :active_relationships, source: :followed
+
   validates :username, presence: true, length: { minimum: 2 }
   validates :fullname, presence: true, length: { minimum: 3 }
   validates :photo, content_type: { in: %w[image/jpeg image/gif image/png], message: 'must be a valid image format' },
@@ -17,5 +20,20 @@ class User < ApplicationRecord
 
   def timeline
     Opinion.where('author_id = ?', id)
+  end
+
+  # Follow another user
+  def follow(another_user)
+    following << another_user
+  end
+
+  # Unfollow a user
+  def unfollow(other_user)
+    following.delete(other_user)
+  end
+
+  # Check if current user is following a user
+  def following?(user)
+    following.include?(user)
   end
 end
