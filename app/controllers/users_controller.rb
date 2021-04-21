@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[index show edit update]
+  before_action :logged_in_user, only: %i[index show edit update following followers]
   before_action :right_user, only: %i[edit update]
 
   def new
@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @opinions = @user.opinions.all
+    @users = @user.followers
   end
 
   def edit
@@ -40,6 +41,20 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def following
+    @title = 'Following'
+    @user = User.find(params[:id])
+    @users = @user.following.all
+    render 'display_follow'
+  end
+
+  def followers
+    @title = 'Followers'
+    @user = User.find(params[:id])
+    @users = @user.followers.all
+    render 'display_follow'
   end
 
   private

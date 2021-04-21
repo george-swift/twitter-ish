@@ -13,8 +13,8 @@
         </div>
         <ul class='tab p-0'>
           <li class="tab-link m-0"><%= link_to 'Tweets', '#' %></li>
-          <li class="tab-link m-0"><%= link_to 'Following', '#' %></li>
-          <li class="tab-link m-0"><%= link_to 'Followers', '#' %></li>
+          <li class="tab-link m-0"><%= link_to 'Following', following_user_path(@user) %></li>
+          <li class="tab-link m-0"><%= link_to 'Followers', followers_user_path(@user) %></li>
         </ul>
         <%= render 'shared/timeline' %>
       </section>
@@ -38,7 +38,7 @@
         </div>
         <ul class='wrap-handles'>
             <li class='followers'>Followed by</li>
-            <%= render 'user', user: @user %>
+            <%= render @users %>
         </ul>
       </section>
 
