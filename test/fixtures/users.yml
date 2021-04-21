@@ -8,3 +8,7 @@ alexa:
   fullname: Amazon Alexa
   username: alexa
 
+siri:
+  fullname: Apple Siri
+  username: siri
+

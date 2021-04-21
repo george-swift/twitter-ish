@@ -19,3 +19,13 @@ most_recent:
   text: "Writing a short test"
   created_at: <%= Time.zone.now %>
   author: jarvis
+
+tdd:
+  text: "Always better to test early"
+  created_at: <%= 10.hours.ago %>
+  author: alexa
+
+devs:
+  text: "9 - 5 is a hoax for us"
+  created_at: <%= 5.minutes.ago %>
+  author: alexa
