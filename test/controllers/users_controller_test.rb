@@ -43,4 +43,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert flash.empty?
     assert_redirected_to @other_user
   end
+
+  test 'should redirect from following page when not logged in' do
+    get following_user_path(@user)
+    assert_redirected_to login_url
+  end
+
+  test 'should redirect from followers page when not logged in' do
+    get followers_user_path(@user)
+    assert_redirected_to login_url
+  end
 end
