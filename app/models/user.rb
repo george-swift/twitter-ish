@@ -20,8 +20,10 @@ class User < ApplicationRecord
     photo.variant(resize_to_limit: [100, 100])
   end
 
+  # Optimize query by checking a subselect in the following table using SQL
   def timeline
-    Opinion.where("author_id IN (?) OR author_id = ?", following_ids, id)
+    following_ids = 'SELECT followed_id FROM followings WHERE follower_id = :author_id'
+    Opinion.where("author_id IN (#{following_ids}) OR author_id = :author_id", author_id: id)
   end
 
   # Follow another user
