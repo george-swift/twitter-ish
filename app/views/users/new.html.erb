@@ -1,0 +1,11 @@
+<% provide(:button_text, 'Sign up') %>
+<div class='signup row justify-content-center'>
+  <div class="col-md-6 col-md-offset-3 ">
+    <div>
+      <%= link_to image_tag("twitter-blue.svg", alt: "Twitter-ish logo"), root_path %>
+      <h2>Create your account</h2>
+    </div>
+    <%= render 'form' %>
+    <p><small>Optional: Profile photo and cover image. You can change the default in settings</small></p>
+  </div>
+</div>

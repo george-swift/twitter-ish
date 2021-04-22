@@ -1,0 +1,30 @@
+<div class='twitter-ish row'>
+
+  <%= render 'shared/left_menu' %>
+
+  <section class='main col-10 p-0'>
+
+    <%= render 'shared/top_nav' %>
+
+    <div class="twitter-ish row">
+      <section class='timeline col-9 p-0'>
+        <ul class='tab p-0'>
+          <li class="tab-link m-0"><%= link_to 'Tweets', users_path %></li>
+          <li class="tab-link m-0"><%= link_to 'Following', following_user_path(@user) %></li>
+          <li class="tab-link m-0"><%= link_to 'Followers', followers_user_path(@user) %></li>
+        </ul>
+
+        <div class='tweets'>
+          <ul class="wrap-tweets">
+            <li class="index"><%= @title %></li>
+            <%= render @users %>
+          </ul>
+        </div>
+      </section>
+
+      <section class='suggested col-3 p-0'>
+        <%= render 'profile_stats' %>
+      </section>
+    </div>
+  </section>
+</div>
