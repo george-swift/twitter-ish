@@ -27,6 +27,11 @@ class User < ApplicationRecord
     Opinion.where("author_id IN (#{following_ids}) OR author_id = :author_id", author_id: id)
   end
 
+  # Renders only other users in who to follow section
+  def suggested
+    User.where.not('id = ?', id)
+  end
+
   # Follow another user
   def follow(another)
     following << another
