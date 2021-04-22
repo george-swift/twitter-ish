@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: 'Following', foreign_key: 'followed_id'
   has_many :followers, through: :passive_relationships
 
+  default_scope -> { order(created_at: :desc) }
   validates :username, presence: true, length: { minimum: 2 }
   validates :fullname, presence: true, length: { minimum: 3 }
   validates :photo, content_type: { in: %w[image/jpeg image/gif image/png], message: 'must be a valid image format' },
