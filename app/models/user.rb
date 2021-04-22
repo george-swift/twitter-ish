@@ -21,12 +21,12 @@ class User < ApplicationRecord
   end
 
   def timeline
-    Opinion.where('author_id = ?', id)
+    Opinion.where("author_id IN (?) OR author_id = ?", following_ids, id)
   end
 
   # Follow another user
-  def follow(another_user)
-    following << another_user
+  def follow(another)
+    following << another
   end
 
   # Unfollow a user
