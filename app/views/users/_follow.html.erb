@@ -1,0 +1,4 @@
+<%= form_with(model: current_user.active_relationships.build, local: true, follow: follow) do |f| %>
+  <span><%= hidden_field_tag :followed_id, follow.id %></span>
+  <%= f.submit "Follow", class: "btn follow-btn" %>
+<% end %>

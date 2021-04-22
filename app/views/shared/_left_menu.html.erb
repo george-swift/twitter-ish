@@ -1,0 +1,19 @@
+<section class='left-menu col-2 p-0'>
+  <div class='position-fixed col-2'>
+    <div class="user-info">
+      <h1>
+        <%= avatar_for(current_user) %>
+        <%= current_user.username %>
+      </h1>
+    </div>
+    <div class="stats row">
+      <a href="<%= following_user_path(current_user) %>">
+        <strong id="following"> <%= current_user.following.count %> </strong> Following
+      </a>
+      <a href="<%= followers_user_path(current_user) %>">
+        <strong id="followers"> <%= current_user.followers.count %> </strong> Followers
+      </a>
+    </div>
+    <%= render 'shared/side_nav' %>
+  </div>
+</section>

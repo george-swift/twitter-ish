@@ -1,0 +1,8 @@
+<li class='handle'>
+  <%= link_to avatar_for(user), user %>
+  <div>
+    <p class="name"><%= user.fullname %></p>
+    <p class="username">&#64;<%= user.username %></p>
+  </div>
+  <span id='follow-form'><%= action(user) %></span>
+</li>
