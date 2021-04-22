@@ -6,13 +6,13 @@
   </li>
 
   <li>
-    <%= link_to '#' do %>
+    <%= link_to following_user_path(current_user) do %>
       <%= image_tag("mention.png", class: 'nav-icon') %> Connect
     <% end %>
   </li>
 
   <li>
-    <%= link_to '#' do %>
+    <%= link_to followers_user_path(current_user) do %>
       <%= image_tag("stats.png", class: 'nav-icon') %> Statistics
     <% end %>
   </li>

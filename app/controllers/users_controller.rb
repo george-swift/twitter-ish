@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = current_user.suggested
     @opinion = current_user.opinions.build
     @opinions = current_user.timeline
   end

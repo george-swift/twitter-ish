@@ -2,6 +2,10 @@
 
 ## Rails Capstone Project: Twitter Redesign
 Based on Twitter, the redesign is a desktop web app that allows users to share opinions and follow other users
+![screenshot](./app/assets/images/screenshot.png)
+
+## Live Link
+Visit [Twitter-ish](https://twitter-ish.herokuapp.com/)
 ### Objectives:
 - Building a RESTful application
 - Application of the MVC design architecture
@@ -24,7 +28,7 @@ Based on Twitter, the redesign is a desktop web app that allows users to share o
 - Rails 6.1.3
 - Bootstrap 5
 - Node.js
-- Amazon AWS
+- Amazon AWS S3
 - Yarn
 
 ## Getting Started
@@ -46,14 +50,14 @@ Based on Twitter, the redesign is a desktop web app that allows users to share o
 
 ## Acknowledgments
 
-Ruby on Rails Guide and API docs for technical information with Rails
-[Icons8](https://icons8.com/) for icons used in design
-Gregoire Vella for inspiration on [Behance](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
-Unsplash creative [Julian Böck](https://unsplash.com/@julian_bck) for default cover image on Twitter-ish
+- Ruby on Rails Guide and API docs for technical information with Rails
+- [Icons8](https://icons8.com/) for icons used in design
+- Gregoire Vella for inspiration on [Behance](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+- Unsplash creative [Julian Böck](https://unsplash.com/@julian_bck) for default cover image on Twitter-ish
 
 ## Show your support
 
-Give a :star:️ &nbsp; if you like this project!
+Leave a :star:️ &nbsp; if you like this project!
 
 ## License
 
