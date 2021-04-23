@@ -371,6 +371,14 @@ strong {
 
 .main {
   background: #f8f9f9;
+  flex: 0 0 auto;
+  width: 83.33%;
+}
+
+@media screen and (max-width: 1020px) {
+  .main {
+    width: 100%;
+  }
 }
 
 .top-icons {
