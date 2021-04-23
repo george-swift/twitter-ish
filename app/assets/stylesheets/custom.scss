@@ -555,6 +555,10 @@ strong {
 .name {
   font: 700 14px $segoe;
   color: $black;
+
+  a {
+    color: $black;
+  }
 }
 
 .username {
