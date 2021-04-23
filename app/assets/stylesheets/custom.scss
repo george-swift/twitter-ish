@@ -89,6 +89,10 @@ body {
 
   .container-fluid {
     padding: 0;
+
+    .mobile {
+      padding-left: 10px;
+    }
   }
 
   .row {
@@ -401,6 +405,12 @@ strong {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .tab-link {
+    padding: 10px 10px;
+  }
+}
+
 .tweets {
   background: #fff;
   margin: 25px 15px;
@@ -555,6 +565,10 @@ strong {
 .name {
   font: 700 14px $segoe;
   color: $black;
+
+  .fullname {
+    color: $black;
+  }
 }
 
 .username {

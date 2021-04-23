@@ -7,7 +7,7 @@
     <%= render 'shared/top_nav' %>
 
     <div class="twitter-ish row">
-      <section class='timeline col-9 p-0'>
+      <section class='timeline col-lg-9 order-1 order-lg-0 p-0'>
         <div class='cover-image'>
           <%= cover_image_for(@user) %>
         </div>
@@ -19,7 +19,7 @@
         <%= render 'shared/timeline' %>
       </section>
 
-      <section class='suggested col-3 p-0'>
+      <section class='suggested col-lg-3 order-0 order-lg-1 p-0'>
         <%= render 'profile_stats' %>
         <ul class='wrap-handles'>
             <li class='followers'>Followed by</li>

@@ -1,8 +1,8 @@
 <li class='each-opinion' id="opinion-<%= opinion.id %>">
-  <%= avatar_for(opinion.author) %>
+  <%= link_to avatar_for(opinion.author), opinion.author %>
   <div class='w-100'>
     <div class='author'>
-      <p class="name"><%= opinion.author.fullname %></p>
+      <p class="name"><%= link_to opinion.author.fullname, opinion.author, class: 'fullname' %></p>
       <p class="time"><%= time_ago_in_words(opinion.created_at) %></p>
     </div>
     <div class='author'>
