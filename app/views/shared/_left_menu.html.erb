@@ -1,8 +1,8 @@
-<section class='left-menu col-2 p-0'>
+<section class='left-menu col-2 p-0 d-none d-lg-block'>
   <div class='position-fixed col-2'>
     <div class="user-info">
       <h1>
-        <%= avatar_for(current_user) %>
+        <%= link_to avatar_for(current_user), current_user %>
         <%= current_user.username %>
       </h1>
     </div>

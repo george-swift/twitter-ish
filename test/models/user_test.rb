@@ -44,15 +44,12 @@ class UserTest < ActiveSupport::TestCase
     jarvis = users(:jarvis)
     alexa = users(:alexa)
     siri = users(:siri)
-    # Opinions from a followed user
     siri.opinions.each do |opinion|
       assert jarvis.timeline.include?(opinion)
     end
-    # Opinions from the user themselves
     jarvis.opinions.each do |self_opinion|
       assert jarvis.timeline.include?(self_opinion)
     end
-    # Opinions from a user they do not follow
     alexa.opinions.each do |not_followed|
       assert_not jarvis.timeline.include?(not_followed)
     end

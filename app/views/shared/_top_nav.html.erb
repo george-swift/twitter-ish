@@ -1,11 +1,23 @@
 <nav class="navbar sticky-top">
-  <div class="container">
-    <%= image_tag("twitter.svg", alt: "Twitter-ish logo", width: '30') %>
+  <div class="container-fluid mobile">
+    <%= link_to image_tag("twitter.svg", alt: "Twitter-ish logo", width: '30'), users_path %>
     <ul class='navbar navbar-right'>
-      <li><%= link_to image_tag("pencil.png", alt: "twitter-ish pencil", class: 'top-icons'), users_path(anchor: 'share') %></li>
-      <li><%= link_to image_tag("mail.png", alt: "twitter-ish mail", class: 'top-icons'), '#' %></li>
-      <li><%= link_to image_tag("search.svg", alt: "twitter-ish search", class: 'top-icons'), '#' %></li>
-      <li><%= link_to image_tag("settings.svg", alt: "twitter-ish settings", class: 'top-icons'), edit_user_path(current_user) %></li>
+      <li class='order-1 order-lg-0'>
+        <%= link_to image_tag("pencil.png", alt: "twitter-ish pencil", class: 'top-icons'), users_path(anchor: 'share') %>
+      </li>
+      <li class='order-0 order-lg-1'>
+        <%= link_to image_tag("mail.png", alt: "twitter-ish mail", class: 'd-none d-lg-block top-icons'), '#' %>
+        <%= link_to image_tag("mobile-avatar.png", class: 'd-lg-none top-icons'), current_user %>
+      </li>
+      <li class='order-3 order-lg-2'>
+        <%= link_to image_tag("search.svg", alt: "twitter-ish search", class: 'd-none d-lg-block top-icons'), '#' %>
+        <%= link_to logout_path, method: :delete, data: {confirm: "Log out from Twitter-ish?"} do %>
+          <%= image_tag("mobile-signout.png", class: 'd-lg-none top-icons') %>
+        <% end %>
+      </li>
+      <li class='order-2 order-lg-3'>
+        <%= link_to image_tag("settings.svg", alt: "twitter-ish settings", class: 'top-icons'), edit_user_path(current_user) %>
+      </li>
     </ul>
   </div>
 </nav>
