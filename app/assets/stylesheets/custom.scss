@@ -89,6 +89,10 @@ body {
 
   .container-fluid {
     padding: 0;
+
+    .mobile {
+      padding-left: 10px;
+    }
   }
 
   .row {
@@ -398,6 +402,12 @@ strong {
     a {
       color: $black;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tab-link {
+    padding: 10px 10px;
   }
 }
 
