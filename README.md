@@ -17,7 +17,7 @@ Visit [Twitter-ish](https://twitter-ish.herokuapp.com/)
 > On Twitter-ish, a user can sign-up with only their names and username. The photo and cover image are optional on sign up
 > as defaults will be applied. Users can however, edit their profile and upload their preferred photos. The maximum allowable
 > sizes are 2MB and 4MB for photo and cover image resectively. Users can share opinions and follow users. Subsequent iterations
-> will provide mobile suppoort and pagination.
+> will provide mobile support and pagination.
 
 ## Prerequisites
 - Internet connection
@@ -34,12 +34,18 @@ Visit [Twitter-ish](https://twitter-ish.herokuapp.com/)
 ## Getting Started
 - To get started with the app, clone this project by running `git clone https://github.com/george-swift/twitter-ish.git`
 - Run `bundle install` to install the needed packages
+- Run `yarn install` to install the dependencies
 - Next, migrate the database to your environment: `rails db:migrate`
 - Finally, run the test suite to verify that everything is working correctly: `rails test`
 - If the test suite passes, you are ready to run the app in a local server. Execute `rails s` to fire up the server
 - Visit `http://localhost:3000/` in your browser to run the app in a local server
 - You can then sign up with required details
 - To terminate the server, enter `Ctrl + C` in your terminal
+
+## Testing
+- Unit and integration tests are implemented with Rspec
+- To verify these tests, run `bin/rails spec`
+- To get a verbose format of the implemented tests, run `bin/rails spec SPEC_OPTS="--format=doc"`
 
 ## Authors
 
