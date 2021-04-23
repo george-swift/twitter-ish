@@ -17,11 +17,10 @@ Visit [Twitter-ish](https://twitter-ish.herokuapp.com/)
 > On Twitter-ish, a user can sign-up with only their names and username. The photo and cover image are optional on sign up
 > as defaults will be applied. Users can however, edit their profile and upload their preferred photos. The maximum allowable
 > sizes are 2MB and 4MB for photo and cover image resectively. Users can share opinions and follow users. Subsequent iterations
-> will provide mobile support and pagination.
+> will provide pagination.
 
 ## Prerequisites
 - Internet connection
-- Desktop or Screen size larger than 1024px
 
 ## Tools / Built With
 - Ruby 3.0.
