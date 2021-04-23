@@ -16,33 +16,26 @@ class User < ApplicationRecord
                                          message: 'must be a valid image format' },
                          size: { less_than: 4.megabytes, message: 'should be less than 4MB' }
 
-  # Resize uploaded images for display
   def profile_photo
     photo.variant(resize_to_limit: [100, 100])
   end
 
-  # Optimize query by checking a subselect in the following table using SQL
   def timeline
-    following_ids = 'SELECT followed_id FROM followings WHERE follower_id = :author_id'
-    Opinion.where("author_id IN (#{following_ids}) OR author_id = :author_id", author_id: id)
+    Opinion.includes(:author).where('author_id IN (?) OR author_id = ?', following_ids, id)
   end
 
-  # Renders only other users in who to follow section
   def suggested
     User.where.not('id = ?', id)
   end
 
-  # Follow another user
   def follow(another)
     following << another
   end
 
-  # Unfollow a user
   def unfollow(other_user)
     following.delete(other_user)
   end
 
-  # Check if current user is following a user
   def following?(user)
     following.include?(user)
   end
