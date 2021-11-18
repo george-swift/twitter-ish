@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[index show edit update following followers]
+  before_action :logged_in_user, except: %i[new create]
   before_action :right_user, only: %i[edit update]
 
   def new
